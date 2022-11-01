@@ -52,9 +52,10 @@ def getInspiration(name):
     if name in quotes.keys():
         quote = random.choice(quotes.get(name))
     elif name == "":
-        quote = random.choice(random.choice(quotes))
+        someName = random.choice(list(quotes.keys()))
+        quote = random.choice(quotes.get(someName))
     else:
         print("Sorry, we don\'t seem to have any quotes from anyone by that name yet!\n")
-        return
+        quote = "NO SUCH AUTHOR"
 
     return quote
