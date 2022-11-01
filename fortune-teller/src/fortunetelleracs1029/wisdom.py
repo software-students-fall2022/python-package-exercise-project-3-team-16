@@ -2,7 +2,7 @@ import random
 
 def get() :
     '''
-    Returns a randomized piece of life advice if the second given argument is life advice 
+    Returns a randomized piece of life advice if the second given argument is life advice
     '''
     pieces_of_advice = [
         "Forgive and let go",
@@ -14,3 +14,22 @@ def get() :
     ]
 
     return random.choice(pieces_of_advice)
+
+def cs(question, category):
+    Random.seed(question);
+    possibleErrors = [
+        "You forgot a semicolon",
+        "You forgot to close a bracket",
+        "You misspelled a keyword",
+        "Incorrect indentation",
+        "Incorrect version",
+        "There is no saving this one"
+    ]
+    if Random.random() * 10 >= 9:
+        if context == 'debug':
+            return random.choice(possibleErrors)
+        else:
+            days = Random.random() * 100
+            return "You are on the right track and will finish your assignment/project in" + str(days)
+    else:
+        return "You are screwed. Switch major. Go next."
