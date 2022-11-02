@@ -15,8 +15,8 @@ def get() :
 
     return random.choice(pieces_of_advice)
 
-def cs(question, category):
-    Random.seed(question);
+def cs(question, debug):
+    #random.seed(question);
     possibleErrors = [
         "You forgot a semicolon",
         "You forgot to close a bracket",
@@ -25,8 +25,10 @@ def cs(question, category):
         "Incorrect version",
         "There is no saving this one"
     ]
-    if Random.random() * 10 >= 9:
-        if context == 'debug':
+    var = random.random() * 10
+    print(var);
+    if var >= 8:
+        if debug:
             return random.choice(possibleErrors)
         else:
             days = Random.random() * 100
