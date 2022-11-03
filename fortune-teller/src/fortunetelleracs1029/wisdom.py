@@ -26,7 +26,7 @@ def cs(question, debug):
         "There is no saving this one"
     ]
     var = random.random() * 10
-    print(var);
+    #print(var);
     if var >= 8:
         if debug:
             return random.choice(possibleErrors)
