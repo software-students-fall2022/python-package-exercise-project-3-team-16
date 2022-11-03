@@ -15,7 +15,6 @@ def getLifeAdvice() :
 
     return random.choice(pieces_of_advice)
 
-
 def getInspiration(name):
     # returns inspirational quote
 
