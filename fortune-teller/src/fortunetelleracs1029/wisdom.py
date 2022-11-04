@@ -16,7 +16,7 @@ def getLifeAdvice() :
     return random.choice(pieces_of_advice)
 
 
-def cs(question, debug):
+def getCSFortune(question, debug):
     #random.seed(question);
     possibleErrors = [
         "You forgot a semicolon",
@@ -28,11 +28,11 @@ def cs(question, debug):
     ]
     var = random.random() * 10
     #print(var);
-    if var >= 8:
+    if var >= 5:
         if debug:
             return random.choice(possibleErrors)
         else:
-            days = Random.random() * 100
+            days = random.random() * 100
             return "You are on the right track and will finish your assignment/project in" + str(days)
     else:
         return "You are screwed. Switch major. Go next."
