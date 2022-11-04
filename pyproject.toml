@@ -8,7 +8,8 @@ description = "A fortune teller package, built with build using setuptools, uplo
 version = "0.0.20"
 authors = [
   { name="Andrei Stoica", email="andreicstoica@icloud.com" },
-  { name="Brandon Chen", email="bc2982@nyu.edu" }
+  { name="Brandon Chen", email="bc2982@nyu.edu" },
+  { name="Charlie Xiang", email="yx2017@nyu.edu" }
 ]
 license = { file = "LICENSE" }
 readme = "README.md"
