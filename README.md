@@ -7,9 +7,17 @@
 ## Functions and their Args
 ### getLiveAdvice(type)
 Returns a line of life advice, either focused on learning (learning) or detaching (detach) depending on the argument passed in.
+**Args:**
+_learning_ and _detach_
 ### getCSFortune(debug)
 asdf
+**Args:**
+_debug_
 ### getInspiration(name)
 asdf
+**Args:**
+_name_
 ### funny(name)
 asdf
+**Args:**
+_name_
