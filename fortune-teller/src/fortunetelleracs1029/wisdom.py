@@ -1,11 +1,10 @@
 import random
 
-def getLifeAdvice() :
+def getLifeAdvice(type) :
     '''
     Returns a randomized piece of life advice if the second given argument is life advice
     '''
-    pieces_of_advice = [
-        "Forgive and let go",
+    learning = [
         "Whatever you do, give it 100%",
         "Never stop learning",
         "Your thinking changes your life",
@@ -13,7 +12,20 @@ def getLifeAdvice() :
         "Starting is the hardest part"
     ]
 
-    return random.choice(pieces_of_advice)
+    detach = [
+        "Forgive and let go",
+        "You can't contorl others",
+        "Find your own happy",
+        "Don't react, respond",
+        "Meditate on it"
+    ]
+
+
+    if (type == learning):
+        return random.choice(learning)
+
+    elif (type == detach):
+        return random.choice(detach)
 
 
 def getCSFortune(question, debug):
