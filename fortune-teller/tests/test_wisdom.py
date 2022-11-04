@@ -61,14 +61,14 @@ class Tests:
         # since get returns a random string, run it a bunch of times and verify the output
         for i in range(100):
             actual = wisdom.getCSFortune("question", False)
-            assert actual in nondebug, f"Expected the text returned by getCSFortune() to be a fortune.  Instead, it returned '{actual}'."
+            allWords = actual.split()
+            if allWords[-2].isnumeric():
+                frontWords = allWords[:-2]
+                frontWords = ' '.join(frontWords) + " " + allWords[-1]
+                assert frontWords == "You are on the right track and will finish your assignment/project in days.", f"Expected the text returned by getCSFortune() to be a debug error fortune with expected completion.  Instead, it returned '{actual}'."
+            else:
+                assert actual == "You are screwed. Switch major. Go next.", f"Expected the text returned by getCSFortune() to be a debug error fortune.  Instead, it returned '{actual}'."
 
         for i in range(100):
             actual = wisdom.getCSFortune("question", True)
-            words = actual.split()
-            if words[-1].isnumeric():
-                words = words[:-1]
-                ' '.join(words)
-                assert words == "You are on the right track and will finish your assignment/project in", f"Expected the text returned by getCSFortune() to be a debug error fortune with expected completion.  Instead, it returned '{actual}'."
-            else:
-                assert actual in debug, f"Expected the text returned by getCSFortune() to be a debug error fortune.  Instead, it returned '{actual}'."
+            assert actual in debug, f"Expected the text returned by getCSFortune() to be a fortune.  Instead, it returned '{actual}'."
