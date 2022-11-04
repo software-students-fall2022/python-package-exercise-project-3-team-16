@@ -39,8 +39,5 @@ def funny(name):
     elif name == "":
         return random.choice(quotes.get(random.choice(list(quotes.keys()))))
     else:
-        return "The author doesn't exist"
+        return "The author doesn't exist"    
     
-    
-    
-
