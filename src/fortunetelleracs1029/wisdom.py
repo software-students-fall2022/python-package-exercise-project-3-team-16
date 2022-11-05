@@ -21,10 +21,10 @@ def getLifeAdvice(type) :
     ]
 
 
-    if (type == learning):
+    if (type == "learning"):
         return random.choice(learning)
 
-    elif (type == detach):
+    elif (type == "detach"):
         return random.choice(detach)
 
 
