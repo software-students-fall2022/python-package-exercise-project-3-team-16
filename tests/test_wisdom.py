@@ -72,3 +72,46 @@ class Tests:
         for i in range(100):
             actual = wisdom.getCSFortune("question", True)
             assert actual in debug, f"Expected the text returned by getCSFortune() to be a fortune.  Instead, it returned '{actual}'."
+
+    ########################
+    def test_getLifeAdvice(self):
+        """
+        Verify getLifeAdvice() function and make sure it returns a non-empty string.
+        """
+        for i in range(100):
+            actual = wisdom.getLifeAdvice("learning")
+            assert isinstance(actual, str), f"Expected get() to return a string. Instead, it returned {actual}"
+            assert len(actual) > 0, f"Expected get() not to be empty. Instead, it returned a string with {len(actual)} characters"
+
+        for i in range(100):
+            actual = wisdom.getLifeAdvice("detach")
+            assert isinstance(actual, str), f"Expected get() to return a string. Instead, it returned {actual}"
+            assert len(actual) > 0, f"Expected get() not to be empty. Instead, it returned a string with {len(actual)} characters"
+            
+    def test_getLifeAdvice_category(self):
+        """
+        Verify that getLifeAdvice is pulling from the right list given the category
+        """
+        learning = [
+            "Whatever you do, give it 100%",
+            "Never stop learning",
+            "Your thinking changes your life",
+            "Be kind to people; treat people as you'd like to be treated",
+            "Starting is the hardest part"
+        ]
+        
+        detach = [
+            "Forgive and let go",
+            "You can't contorl others",
+            "Find your own happy",
+            "Don't react, respond",
+            "Meditate on it"
+        ]
+        
+        actual = wisdom.getLifeAdvice("learning")
+        assert actual in learning, f"Expected to return a result from learning. Instead, returned something not in learning"
+        
+        actual = wisdom.getLifeAdvice("detach")
+        assert actual in detach, f"Expected to return a result from detach. Instead, returned something not in learning"
+
+        
