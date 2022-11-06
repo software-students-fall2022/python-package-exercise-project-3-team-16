@@ -114,4 +114,61 @@ class Tests:
         actual = wisdom.getLifeAdvice("detach")
         assert actual in detach, f"Expected to return a result from detach. Instead, returned something not in learning"
 
+    ##########
+    def test_getInspired(self):
+        # trying to verify that the right quote is being returned given a particular name
+
+        LS_quotes = [
+            "Do the scary thing first, and get scared later.",
+            "All cannot be lost when there is still so much being found.",
+            "When things don\'t go right, go left.",
+            "Sometimes the things you\'ve lost can be found again in unexpected places."
+        ]
+
+        AE_quotes = [
+            "The most difficult thing is the decision to act, the rest is merely tenacity."
+        ]
+
+        AB_quotes = [
+            ("Don't settle for average. Bring your best to the moment. Then, whether it fails or succeeds, "
+            "at least you know you gave all you had.")
+        ]
+
+        BES_quotes = [
+            "I have stood on a mountain of no\'s for one yes."
+        ]
+
+        MAR_quotes = [
+            ("Courage doesn't always roar. Sometimes courage is a quiet voice at the end of the day saying, "
+            "\"I will try again tomorrow.\"")
+        ]
+
+        MA_quotes = [
+            ("Courage is the most important of all the virtues because without courage, "
+            "you can't practice any other virtue consistently.")
+        ]
+
+        FD_quotes = [
+            "If there is no struggle, there is no progress."
+        ]
+
+        actualLS = wisdom.getInspiration("Lemony Snicket")
+        assert actualLS in LS_quotes, f"Expected to return a quote from LS_quotes, instead returned something else"
+
+        actualAE = wisdom.getInspiration("Amelia Earhart")
+        assert actualAE in AE_quotes, f"Expected to return a quote from AE_quotes, instead returned something else"
         
+        actualAB = wisdom.getInspiration("Angela Bassett")
+        assert actualAB in AB_quotes, f"Expected to return a quote from AB_quotes, instead returned something else"
+
+        actualBES = wisdom.getInspiration("Barbara Elaine Smith")
+        assert actualBES in BES_quotes, f"Expected to return a quote from BES_quotes, instead returned something else"
+
+        actualMAR = wisdom.getInspiration("Mary Anne Radmacher")
+        assert actualMAR in MAR_quotes, f"Expected to return a quote from MAR_quotes, instead returned something else"
+
+        actualMA = wisdom.getInspiration("Maya Angelou")
+        assert actualMA in MA_quotes, f"Expected to return a quote from MA_quotes, instead returned something else"
+
+        actualFD = wisdom.getInspiration("Frederick Douglass")
+        assert actualFD in FD_quotes, f"Expected to return a quote from FD_quotes, instead returned something else"
