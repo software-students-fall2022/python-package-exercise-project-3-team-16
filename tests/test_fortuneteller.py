@@ -178,31 +178,21 @@ class Tests:
     def test_funny(self):
         
         Steven = ["I wish the first word I ever said was the word quote, so right before I die I could say unquote."]
-
         Issac = ["Though sleep is called our best friend, it is a friend who often keeps us waiting!"]
-
         Leo = ["Happiness is an allegory, unhappiness a story."]
-
         Rowling = ["Happiness can be found even in the darkest of times; if only one remembers to turn on the light."]
-
         Oscar = ["Some cause happiness wherever they go; others, whenever they go."]
-
         Mark = ["When your friends begin to flatter you on how young you look, it's a sure sign you're getting old."]
-
+        
         actualS = fortuneteller.funny("Steven Wright")
         assert actualS in Steven, f"Expected to return a quote from Steven Wright.Instead returned something else"
-
         actualI = fortuneteller.funny("Issac Asimov")
         assert actualI in Issac, f"Expected to return a quote from Issac Asimov. Instead returned something else"
-        
         actualL = fortuneteller.funny("Leo Tolstoy")
         assert actualL in Leo, f"Expected to return a quote from Leo Tolstoy. Instead returned something else"
-
         actualR = fortuneteller.funny("J.K Rowling")
         assert actualR in Rowling, f"Expected to return a quote from J.K Rowling. Instead returned something else"
-
         actualO = fortuneteller.funny("Oscar Wilde")
         assert actualO in Oscar, f"Expected to return a quote from Oscar Wilde. Instead returned something else"
-
         actualM = fortuneteller.funny("Mark Twain")
         assert actualM in Mark, f"Expected to return a quote from Mark Twain. Instead returned something else"
