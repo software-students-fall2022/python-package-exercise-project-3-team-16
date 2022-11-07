@@ -64,7 +64,7 @@ def getInspiration(name):
         ],
         "Angela Bassett": [
             ("Don't settle for average. Bring your best to the moment. Then, whether it fails or succeeds, "
-            "at least you know you gave all you had."),
+            "at least you know you gave all you had.")
         ],
         "Barbara Elaine Smith": [
             "I have stood on a mountain of no\'s for one yes."
