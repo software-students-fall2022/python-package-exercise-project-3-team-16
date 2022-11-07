@@ -109,7 +109,7 @@ def funny(name):
 
         "Oscar Wilde": "Some cause happiness wherever they go; others, whenever they go.",
 
-        "Mark Twain": "When your friends begin to flatter you on how young you look, it's a sure sign you're getting old.",
+        "Mark Twain": "When your friends begin to flatter you on how young you look, it's a sure sign you're getting old."
     }
 
     if name in quotes.keys():
