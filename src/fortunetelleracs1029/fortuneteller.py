@@ -99,7 +99,7 @@ def funny(name):
     Returns happy/funny quotes
     '''
     quotes = {
-        "Steven Wright": "I wish the first word I ever said was the word 'quote,' so right before I die I could say 'unquote'.",
+        "Steven Wright": "I wish the first word I ever said was the word quote, so right before I die I could say unquote.",
 
         "Issac Asimov": "Though sleep is called our best friend, it is a friend who often keeps us waiting!",
 
