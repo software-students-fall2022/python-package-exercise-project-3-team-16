@@ -176,7 +176,7 @@ class Tests:
 
  ##########
     def test_funny(self):
-        Steven = ["I wish the first word I ever said was the word 'quote,' so right before I die I could say 'unquote."]
+        Steven = ["I wish the first word I ever said was the word 'quote,' so right before I die I could say 'unquote'."]
 
         Issac = ["Though sleep is called our best friend, it is a friend who often keeps us waiting!"]
 
