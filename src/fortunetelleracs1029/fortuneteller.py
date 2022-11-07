@@ -118,4 +118,3 @@ def funny(name):
         return random.choice(quotes.get(random.choice(list(quotes.keys()))))
     else:
         return "The author doesn't exist"
-    

@@ -5,9 +5,12 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "fortunetelleracs1029"
 description = "A fortune teller package, built with build using setuptools, uploaded to PyPI using twine, and distributed via pip."
-version = "0.0.7"
+version = "0.0.20"
 authors = [
   { name="Andrei Stoica", email="andreicstoica@icloud.com" },
+  { name="Brandon Chen", email="bc2982@nyu.edu" },
+  { name="Charlie Xiang", email="yx2017@nyu.edu" },
+  { name="Sanjaya Bhatta", email="sb7677@nyu.edu" }
 ]
 license = { file = "LICENSE" }
 readme = "README.md"
