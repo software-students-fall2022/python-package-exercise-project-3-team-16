@@ -1,5 +1,5 @@
 import pytest
-from fortunetelleracs1029 import wisdom
+from fortunetelleracs1029 import fortuneteller
 
 class Tests:
     #
@@ -33,12 +33,12 @@ class Tests:
         Verify getCSFortune() function and make sure it returns a non-empty string.
         """
         for i in range(100):
-            actual = wisdom.getCSFortune("question", False)
+            actual = fortuneteller.getCSFortune("question", False)
             assert isinstance(actual, str), f"Expected get() to return a string. Instead, it returned {actual}"
             assert len(actual) > 0, f"Expected get() not to be empty. Instead, it returned a string with {len(actual)} characters"
 
         for i in range(100):
-            actual = wisdom.getCSFortune("question", True)
+            actual = fortuneteller.getCSFortune("question", True)
             assert isinstance(actual, str), f"Expected get() to return a string. Instead, it returned {actual}"
             assert len(actual) > 0, f"Expected get() not to be empty. Instead, it returned a string with {len(actual)} characters"
 
@@ -60,7 +60,7 @@ class Tests:
 
         # since get returns a random string, run it a bunch of times and verify the output
         for i in range(100):
-            actual = wisdom.getCSFortune("question", False)
+            actual = fortuneteller.getCSFortune("question", False)
             allWords = actual.split()
             if allWords[-2].isnumeric():
                 frontWords = allWords[:-2]
@@ -70,7 +70,7 @@ class Tests:
                 assert actual == "You are screwed. Switch major. Go next.", f"Expected the text returned by getCSFortune() to be a debug error fortune.  Instead, it returned '{actual}'."
 
         for i in range(100):
-            actual = wisdom.getCSFortune("question", True)
+            actual = fortuneteller.getCSFortune("question", True)
             assert actual in debug, f"Expected the text returned by getCSFortune() to be a fortune.  Instead, it returned '{actual}'."
 
     ########################
@@ -79,12 +79,12 @@ class Tests:
         Verify getLifeAdvice() function and make sure it returns a non-empty string.
         """
         for i in range(100):
-            actual = wisdom.getLifeAdvice("learning")
+            actual = fortuneteller.getLifeAdvice("learning")
             assert isinstance(actual, str), f"Expected get() to return a string. Instead, it returned {actual}"
             assert len(actual) > 0, f"Expected get() not to be empty. Instead, it returned a string with {len(actual)} characters"
 
         for i in range(100):
-            actual = wisdom.getLifeAdvice("detach")
+            actual = fortuneteller.getLifeAdvice("detach")
             assert isinstance(actual, str), f"Expected get() to return a string. Instead, it returned {actual}"
             assert len(actual) > 0, f"Expected get() not to be empty. Instead, it returned a string with {len(actual)} characters"
             
@@ -108,10 +108,10 @@ class Tests:
             "Meditate on it"
         ]
         
-        actual = wisdom.getLifeAdvice("learning")
+        actual = fortuneteller.getLifeAdvice("learning")
         assert actual in learning, f"Expected to return a result from learning. Instead, returned something not in learning"
         
-        actual = wisdom.getLifeAdvice("detach")
+        actual = fortuneteller.getLifeAdvice("detach")
         assert actual in detach, f"Expected to return a result from detach. Instead, returned something not in learning"
 
     ##########
@@ -152,23 +152,52 @@ class Tests:
             "If there is no struggle, there is no progress."
         ]
 
-        actualLS = wisdom.getInspiration("Lemony Snicket")
+        actualLS = fortuneteller.getInspiration("Lemony Snicket")
         assert actualLS in LS_quotes, f"Expected to return a quote from LS_quotes, instead returned something else"
 
-        actualAE = wisdom.getInspiration("Amelia Earhart")
+        actualAE = fortuneteller.getInspiration("Amelia Earhart")
         assert actualAE in AE_quotes, f"Expected to return a quote from AE_quotes, instead returned something else"
         
-        actualAB = wisdom.getInspiration("Angela Bassett")
+        actualAB = fortuneteller.getInspiration("Angela Bassett")
         assert actualAB in AB_quotes, f"Expected to return a quote from AB_quotes, instead returned something else"
 
-        actualBES = wisdom.getInspiration("Barbara Elaine Smith")
+        actualBES = fortuneteller.getInspiration("Barbara Elaine Smith")
         assert actualBES in BES_quotes, f"Expected to return a quote from BES_quotes, instead returned something else"
 
-        actualMAR = wisdom.getInspiration("Mary Anne Radmacher")
+        actualMAR = fortuneteller.getInspiration("Mary Anne Radmacher")
         assert actualMAR in MAR_quotes, f"Expected to return a quote from MAR_quotes, instead returned something else"
 
-        actualMA = wisdom.getInspiration("Maya Angelou")
+        actualMA = fortuneteller.getInspiration("Maya Angelou")
         assert actualMA in MA_quotes, f"Expected to return a quote from MA_quotes, instead returned something else"
 
-        actualFD = wisdom.getInspiration("Frederick Douglass")
+        actualFD = fortuneteller.getInspiration("Frederick Douglass")
         assert actualFD in FD_quotes, f"Expected to return a quote from FD_quotes, instead returned something else"
+
+
+ ##########
+    def test_funny(self):
+        
+        Steven = ["I wish the first word I ever said was the word quote, so right before I die I could say unquote."]
+        
+        Issac = ["Though sleep is called our best friend, it is a friend who often keeps us waiting!"]
+        
+        Leo = ["Happiness is an allegory, unhappiness a story."]
+        
+        Rowling = ["Happiness can be found even in the darkest of times; if only one remembers to turn on the light."]
+        
+        Oscar = ["Some cause happiness wherever they go; others, whenever they go."]
+        
+        Mark = ["When your friends begin to flatter you on how young you look, it's a sure sign you're getting old."]
+        
+        actualS = fortuneteller.funny("Steven Wright")
+        assert actualS in Steven, f"Expected to return a quote from Steven Wright.Instead returned something else"
+        actualI = fortuneteller.funny("Issac Asimov")
+        assert actualI in Issac, f"Expected to return a quote from Issac Asimov. Instead returned something else"
+        actualL = fortuneteller.funny("Leo Tolstoy")
+        assert actualL in Leo, f"Expected to return a quote from Leo Tolstoy. Instead returned something else"
+        actualR = fortuneteller.funny("J.K Rowling")
+        assert actualR in Rowling, f"Expected to return a quote from J.K Rowling. Instead returned something else"
+        actualO = fortuneteller.funny("Oscar Wilde")
+        assert actualO in Oscar, f"Expected to return a quote from Oscar Wilde. Instead returned something else"
+        actualM = fortuneteller.funny("Mark Twain")
+        assert actualM in Mark, f"Expected to return a quote from Mark Twain. Instead returned something else"

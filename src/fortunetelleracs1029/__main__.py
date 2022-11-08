@@ -1,7 +1,7 @@
-import fortunetelleracs1029.wisdom as wisdom
+import fortunetelleracs1029.fortuneteller as fortuneteller
 
 def main():
-  line = wisdom.get()
+  line = fortuneteller.get()
   print(line)
 
 if __name__ == '__main__':
