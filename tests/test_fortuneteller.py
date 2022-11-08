@@ -20,8 +20,6 @@ class Tests:
     def test_sanity_check(self, example_fixture):
         """
         Test debugging... making sure that we can run a simple test that always passes.
-        Note the use of the example_fixture in the parameter list - any setup and teardown in that fixture will be run before and after this test function executes
-        From the main project directory, run the `python3 -m pytest` command to run all tests.
         """
         expected = True # the value we expect to be present
         actual = True # the value we see in reality
@@ -44,9 +42,8 @@ class Tests:
 
     def test_getCSFortune_content(self):
         """
-        Make sure that the text returned by the get() function is actually from the correct poem.
+        Make sure that the text returned by the getCSFortune() function is valid.
         """
-        # the full text of the actual Jabberwocky poem by Lewis Carroll
         nondebug = []
         debug = [
             "You forgot a semicolon",
@@ -73,6 +70,29 @@ class Tests:
             actual = fortuneteller.getCSFortune("question", True)
             assert actual in debug, f"Expected the text returned by getCSFortune() to be a fortune.  Instead, it returned '{actual}'."
 
+    def test_validDate(self):
+        """
+        Make sure that the expected days till completion is within the correct range.
+        """
+        for i in range(100):
+            actual = fortuneteller.getCSFortune("question", False)
+            allWords = actual.split()
+            if allWords[-2].isnumeric():
+                assert int(allWords[-2]) > 0 and int(allWords[-2]) < 101
+
+    def test_getCSFortune_seed(self):
+        """
+        Make sure that the text returned by the getCSFortune() function is the same when given the same seed.
+        """
+        actual = fortuneteller.getCSFortune("question", True, "super secret seed")
+        for i in range(100):
+            assert actual == fortuneteller.getCSFortune("question", True, "super secret seed")
+
+        actual = fortuneteller.getCSFortune("question", False, "super secret seed")
+        for i in range(100):
+            assert actual == fortuneteller.getCSFortune("question", False, "super secret seed")
+
+
     ########################
     def test_getLifeAdvice(self):
         """
@@ -87,7 +107,7 @@ class Tests:
             actual = fortuneteller.getLifeAdvice("detach")
             assert isinstance(actual, str), f"Expected get() to return a string. Instead, it returned {actual}"
             assert len(actual) > 0, f"Expected get() not to be empty. Instead, it returned a string with {len(actual)} characters"
-            
+
     def test_getLifeAdvice_category(self):
         """
         Verify that getLifeAdvice is pulling from the right list given the category
@@ -99,7 +119,7 @@ class Tests:
             "Be kind to people; treat people as you'd like to be treated",
             "Starting is the hardest part"
         ]
-        
+
         detach = [
             "Forgive and let go",
             "You can't contorl others",
@@ -107,10 +127,10 @@ class Tests:
             "Don't react, respond",
             "Meditate on it"
         ]
-        
+
         actual = fortuneteller.getLifeAdvice("learning")
         assert actual in learning, f"Expected to return a result from learning. Instead, returned something not in learning"
-        
+
         actual = fortuneteller.getLifeAdvice("detach")
         assert actual in detach, f"Expected to return a result from detach. Instead, returned something not in learning"
 
@@ -157,7 +177,7 @@ class Tests:
 
         actualAE = fortuneteller.getInspiration("Amelia Earhart")
         assert actualAE in AE_quotes, f"Expected to return a quote from AE_quotes, instead returned something else"
-        
+
         actualAB = fortuneteller.getInspiration("Angela Bassett")
         assert actualAB in AB_quotes, f"Expected to return a quote from AB_quotes, instead returned something else"
 
@@ -176,19 +196,19 @@ class Tests:
 
  ##########
     def test_funny(self):
-        
+
         Steven = ["I wish the first word I ever said was the word quote, so right before I die I could say unquote."]
-        
+
         Issac = ["Though sleep is called our best friend, it is a friend who often keeps us waiting!"]
-        
+
         Leo = ["Happiness is an allegory, unhappiness a story."]
-        
+
         Rowling = ["Happiness can be found even in the darkest of times; if only one remembers to turn on the light."]
-        
+
         Oscar = ["Some cause happiness wherever they go; others, whenever they go."]
-        
+
         Mark = ["When your friends begin to flatter you on how young you look, it's a sure sign you're getting old."]
-        
+
         actualS = fortuneteller.funny("Steven Wright")
         assert actualS in Steven, f"Expected to return a quote from Steven Wright.Instead returned something else"
         actualI = fortuneteller.funny("Issac Asimov")

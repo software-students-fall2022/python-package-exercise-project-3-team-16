@@ -9,10 +9,14 @@
 Returns a line of life advice, either focused on learning (learning) or detaching (detach) depending on the argument passed in.
 **Args:**
 _learning_ and _detach_
-### getCSFortune(debug)
-asdf
+### getCSFortune(question, debug, seed=None)
+Receives a question in the form of a String with a boolean value on whether it is for
+debugging purposes. An optional seed argument could be given to generate the same
+random result. Outputs a fortune on whether you will succeed in doing anything computer
+science related or not. If debugging, a random potential error is given or nothing at
+all if it is beyond fixing.
 **Args:**
-_debug_
+question, debug, seed=None
 ### getInspiration(name)
 asdf
 **Args:**
