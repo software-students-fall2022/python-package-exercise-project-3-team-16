@@ -178,10 +178,15 @@ class Tests:
     def test_funny(self):
         
         Steven = ["I wish the first word I ever said was the word quote, so right before I die I could say unquote."]
+        
         Issac = ["Though sleep is called our best friend, it is a friend who often keeps us waiting!"]
+        
         Leo = ["Happiness is an allegory, unhappiness a story."]
+        
         Rowling = ["Happiness can be found even in the darkest of times; if only one remembers to turn on the light."]
+        
         Oscar = ["Some cause happiness wherever they go; others, whenever they go."]
+        
         Mark = ["When your friends begin to flatter you on how young you look, it's a sure sign you're getting old."]
         
         actualS = fortuneteller.funny("Steven Wright")
