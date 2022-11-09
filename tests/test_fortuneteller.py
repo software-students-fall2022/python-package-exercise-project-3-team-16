@@ -212,7 +212,7 @@ class Tests:
 
         for wrongName in error_name_list:
             errorQuote = fortuneteller.getInspiration(wrongName)
-            assert errorQuote == "NO SUCH AUTHOR", f"Expected function to return an error message. Instead returned {errorQuote}"
+            assert errorQuote == "NO SUCH AUTHOR", f"Expected function to return \"NO SUCH AUTHOR\" error message. Instead returned {errorQuote}"
 
 
  ##########
