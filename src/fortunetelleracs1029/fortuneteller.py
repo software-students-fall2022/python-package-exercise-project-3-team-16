@@ -1,6 +1,6 @@
 import random
 
-def getLifeAdvice(type) :
+def getLifeAdvice(type, seed=None) :
     '''
     Returns a randomized piece of life advice if the second given argument is life advice
     '''
@@ -14,12 +14,13 @@ def getLifeAdvice(type) :
 
     detach = [
         "Forgive and let go",
-        "You can't contorl others",
+        "You can't control others",
         "Find your own happy",
         "Don't react, respond",
         "Meditate on it"
     ]
-
+    if seed is not None:
+        random.seed(seed)
 
     if (type == "learning"):
         return random.choice(learning)

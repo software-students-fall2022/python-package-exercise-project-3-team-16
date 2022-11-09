@@ -5,10 +5,10 @@
 # Python Fortune Teller Package
 
 ## Functions and their Args
-### getLiveAdvice(type)
-Returns a line of life advice, either focused on learning (learning) or detaching (detach) depending on the argument passed in.
+### getLiveAdvice(type, seed=None)
+Returns a line of life advice, either focused on learning (learning) or detaching (detach) depending on the argument passed in with an optional seed argument.
 **Args:**
-_learning_ and _detach_
+_learning_, _detach_, and _seed_
 ### getCSFortune(question, debug, seed=None)
 Receives a question in the form of a String with a boolean value on whether it is for
 debugging purposes. An optional seed argument could be given to generate the same
@@ -16,13 +16,15 @@ random result. Outputs a fortune on whether you will succeed in doing anything c
 science related or not. If debugging, a random potential error is given or nothing at
 all if it is beyond fixing.
 **Args:**
-question, debug, seed=None
+_question_, _debug_, and _seed_
 ### getInspiration(name)
-Receives either a famous person's name or an empty string, and returns a random inspirational quote by the specified 
+Receives either a famous person's name or an empty string, and returns a random inspirational quote by the specified
 person. If the string is empty, returns a random inspirational quote by a random person.
 **Args:**
 _name_
 ### funny(name)
-asdf
+Receives the name of a person and return a funny quote if the person is one of the 6 preset. If an empty string is
+given, a random quote by any of the 6 figures is given. If an invalid name is given, no quote is given back with a
+message.
 **Args:**
 _name_
