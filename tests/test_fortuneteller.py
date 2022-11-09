@@ -25,6 +25,7 @@ class Tests:
         actual = True # the value we see in reality
         assert actual == expected, "Expected True to be equal to True!"
 
+    ##########
 
     def test_getCSFortune(self):
         """
@@ -135,6 +136,18 @@ class Tests:
         assert actual in detach, f"Expected to return a result from detach. Instead, returned something not in learning"
 
     ##########
+
+    def test_getLifeAdvice(self):
+        # testing that every call is returning a string with length greater than 0
+        for i in range(50):
+            inspir = fortuneteller.getInspiration("") # this should return some random quote from any author/person
+
+            inspir_type = type(inspir)
+            assert isinstance(inspir, str), f"Expected function to return a string. Instead returned {inspir_type}"
+
+            inspir_len = len(inspir)
+            assert len(inspir) > 0, f"Expected function to return a string with length longer than 0. Instead returned {inspir_len}"
+
     def test_getInspired(self):
         # trying to verify that the right quote is being returned given a particular name
 
