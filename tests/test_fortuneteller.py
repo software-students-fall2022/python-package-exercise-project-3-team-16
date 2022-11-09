@@ -137,7 +137,7 @@ class Tests:
 
     ##########
 
-    def test_getLifeAdvice(self):
+    def test_getInspired(self):
         # testing that every call is returning a string with length greater than 0
         for i in range(50):
             inspir = fortuneteller.getInspiration("") # this should return some random quote from any author/person
@@ -148,7 +148,7 @@ class Tests:
             inspir_len = len(inspir)
             assert len(inspir) > 0, f"Expected function to return a string with length longer than 0. Instead returned {inspir_len}"
 
-    def test_getInspired(self):
+    def test_getInspiredCorrectness(self):
         # trying to verify that the right quote is being returned given a particular name
 
         LS_quotes = [
@@ -205,6 +205,14 @@ class Tests:
 
         actualFD = fortuneteller.getInspiration("Frederick Douglass")
         assert actualFD in FD_quotes, f"Expected to return a quote from FD_quotes, instead returned something else"
+
+    def test_getInspiredError(self):
+
+        error_name_list = ["lemon snick", "amy ear", "ang bass", "barb smit", "mars rad", "may angu", "rick lass"]
+
+        for wrongName in error_name_list:
+            errorQuote = fortuneteller.getInspiration(wrongName)
+            assert errorQuote == "NO SUCH AUTHOR", f"Expected function to return an error message. Instead returned {errorQuote}"
 
 
  ##########
