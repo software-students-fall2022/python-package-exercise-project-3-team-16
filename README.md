@@ -18,7 +18,8 @@ all if it is beyond fixing.
 **Args:**
 question, debug, seed=None
 ### getInspiration(name)
-asdf
+Receives either a famous person's name or an empty string, and returns a random inspirational quote by the specified 
+person. If the string is empty, returns a random inspirational quote by a random person.
 **Args:**
 _name_
 ### funny(name)
