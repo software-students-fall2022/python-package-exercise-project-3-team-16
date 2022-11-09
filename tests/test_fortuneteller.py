@@ -135,6 +135,18 @@ class Tests:
         actual = fortuneteller.getLifeAdvice("detach")
         assert actual in detach, f"Expected to return a result from detach. Instead, returned something not in learning"
 
+    def test_getLifeAdvice_seed(self):
+        """
+        Make sure that the text returned by the getLifeAdvice() function is the same when given the same seed.
+        """
+        actual = fortuneteller.getLifeAdvice("learning", "super secret seed")
+        for i in range(100):
+            assert actual == fortuneteller.getLifeAdvice("learning", "super secret seed")
+
+        actual = fortuneteller.getLifeAdvice("detach", "super secret seed")
+        for i in range(100):
+            assert actual == fortuneteller.getLifeAdvice("detach", "super secret seed")
+
     ##########
 
     def test_getInspired(self):
@@ -216,7 +228,7 @@ class Tests:
 
 
  ##########
-    def test_funny(self):
+    def test_funny_specific(self):
 
         Steven = ["I wish the first word I ever said was the word quote, so right before I die I could say unquote."]
 
@@ -242,3 +254,24 @@ class Tests:
         assert actualO in Oscar, f"Expected to return a quote from Oscar Wilde. Instead returned something else"
         actualM = fortuneteller.funny("Mark Twain")
         assert actualM in Mark, f"Expected to return a quote from Mark Twain. Instead returned something else"
+
+    def test_funny_random(self):
+        quotes = [
+            "I wish the first word I ever said was the word quote, so right before I die I could say unquote.",
+            "Though sleep is called our best friend, it is a friend who often keeps us waiting!",
+            "Happiness is an allegory, unhappiness a story.",
+            "Happiness can be found even in the darkest of times; if only one remembers to turn on the light.",
+            "Some cause happiness wherever they go; others, whenever they go.",
+            "When your friends begin to flatter you on how young you look, it's a sure sign you're getting old."
+        ]
+        for i in range(100):
+            actual = fortuneteller.funny("")
+            assert actual in quotes
+
+    def test_funny_invalid(self):
+        actual = fortuneteller.funny("Michael Scott")
+        assert actual == "The author doesn't exist"
+        actual = fortuneteller.funny("Dwight Schrute")
+        assert actual == "The author doesn't exist"
+        actual = fortuneteller.funny("Jim Halpert")
+        assert actual == "The author doesn't exist"
