@@ -4,6 +4,13 @@
 
 # Python Fortune Teller Package
 
+[Andrei Stoica](https://github.com/andreicstoica)
+[Brandon Chen](https://github.com/b-chen00)
+[Charlie Xiang](https://github.com/xiang-charlie)
+[Sanjaya Bhatta](https://github.com/itSanjaya)
+
+[Package Page on PyPi](https://pypi.org/project/fortunetelleracs1029/0.1.0/)
+
 ## Functions and their Args
 ### getLiveAdvice(type, seed=None)
 Returns a line of life advice, either focused on learning (learning) or detaching (detach) depending on the argument passed in with an optional seed argument.
@@ -28,3 +35,12 @@ given, a random quote by any of the 6 figures is given. If an invalid name is gi
 message.
 **Args:**
 _name_
+
+## How to Import and Install
+* Use `pip install fortunetelleracs1029==0.1.0` to create a pipenv-managed virtual environment and install the latest version of this package.
+* Activate the virtual environment using `pipenv shell`.
+
+## How to Contribute, Build and Test
+* Install and enter the virtual environment as above.
+* Run the tests from the main project directory using `python3 -m pytest`.
+* Create a Python program and import this package using `from fortunetelleracs1029 import fortuneteller`
